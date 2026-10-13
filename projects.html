@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,242 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet">
+
+    <style>
+        /* =========================
+           GITHUB SECTION FIX
+        ========================= */
+
+        .github-section {
+            padding: 70px 20px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            gap: 16px;
+            width: 100%;
+            min-height: 250px;
+        }
+
+        .github-section h2 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .github-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 750px;
+            margin: 0;
+            color: #d5dcff;
+        }
+
+        .github-section .github-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0;
+            padding: 14px 32px;
+
+            min-height: 55px;
+            border-radius: 16px;
+
+            background: #00f7ff;
+            color: #000000;
+
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .github-section .github-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 25px rgba(0, 247, 255, 0.5);
+        }
+
+        /* =========================
+           PROJECT GRID
+        ========================= */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+
+            padding: 40px 10% 70px;
+            align-items: stretch;
+        }
+
+        .project-card {
+            min-width: 0;
+            height: 100%;
+            padding: 30px;
+
+            display: flex;
+            flex-direction: column;
+            overflow-wrap: anywhere;
+        }
+
+        .project-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .project-card h2 {
+            color: #00f7ff;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #d5dcff;
+            line-height: 1.8;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tech-stack span {
+            background: #111b35;
+            padding: 7px 13px;
+            border-radius: 20px;
+            color: #00f7ff;
+            font-size: 0.8rem;
+        }
+
+        .project-card .project-btn {
+            display: inline-block;
+            margin-top: auto;
+            padding: 12px 22px;
+            text-decoration: none;
+            border-radius: 10px;
+            background: #00f7ff;
+            color: #000;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .project-card .project-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px #00f7ff;
+        }
+
+        /* =========================
+           FUTURE GOALS
+        ========================= */
+
+        .future-projects {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .future-title {
+            grid-column: 1 / -1;
+            color: #00f7ff;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .goal-card {
+            padding: 25px;
+        }
+
+        .goal-card h3 {
+            color: #00f7ff;
+            margin-bottom: 12px;
+        }
+
+        .goal-card p {
+            color: #d5dcff;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .projects-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .future-projects {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .future-title {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .projects-container {
+                grid-template-columns: 1fr;
+                padding: 30px 6% 50px;
+            }
+
+            .future-projects {
+                grid-template-columns: 1fr;
+                padding: 40px 6%;
+            }
+
+            .future-title {
+                grid-column: auto;
+            }
+
+            .github-section {
+                padding: 55px 20px;
+                gap: 18px;
+            }
+
+            .github-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .github-section p {
+                font-size: 0.95rem;
+            }
+
+            .github-section .github-btn {
+                font-size: 1rem;
+                padding: 13px 25px;
+            }
+        }
+
+        /* =========================
+           REDUCED MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .github-section .github-btn,
+            .project-card .project-btn {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -31,12 +268,14 @@
     <!-- Page Header -->
 
     <section class="page-header">
+
         <h1>My Projects</h1>
 
         <p>
             Explore my projects showcasing my skills in web development,
             productivity, accessibility, financial management, and problem solving.
         </p>
+
     </section>
 
 
@@ -55,7 +294,7 @@
                 <p>
                     Built a web-based age calculator that calculates the
                     user's age from their date of birth and displays the
-                    result instantly through a simple and intuitive interface.
+                    result instantly through a simple interface.
                 </p>
 
                 <div class="tech-stack">
@@ -118,8 +357,8 @@
 
                 <p>
                     Built an interactive Rock Paper Scissors game where
-                    users play against the computer with real-time score
-                    tracking and instant game results.
+                    users play against the computer with score tracking
+                    and instant game results.
                 </p>
 
                 <div class="tech-stack">
@@ -216,8 +455,8 @@
 
                 <p>
                     An interview preparation project designed to help users
-                    practice interview questions, improve their confidence,
-                    and prepare for technical and professional interviews.
+                    practice interview questions, improve confidence, and
+                    prepare for technical and professional interviews.
                 </p>
 
                 <div class="tech-stack">
@@ -274,7 +513,7 @@
     </section>
 
 
-    <!-- GitHub Section -->
+    <!-- GitHub Profile: Fixed Spacing -->
 
     <section class="github-section">
 
@@ -339,9 +578,11 @@
     <!-- Footer -->
 
     <footer>
+
         <p>
             © 2026 DASARANNA GAARI HITHENDRA | All Rights Reserved
         </p>
+
     </footer>
 
 
@@ -350,5 +591,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
-```
